@@ -39,7 +39,7 @@ VerticalLayout layout = new VerticalLayout();
 Gallery gallery = new Gallery();
 layout.addComponent(gallery);
 ```
-Then, simply create the images and show the gallery!
+Then, just create the images and show the gallery!
 ```java
 Image apple = new Image.Builder().title("Apple")
         .href("apple.jpg")
