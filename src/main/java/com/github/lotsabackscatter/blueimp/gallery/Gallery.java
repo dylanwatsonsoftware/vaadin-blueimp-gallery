@@ -1,4 +1,4 @@
-package com.immersion.blueimp.gallery;
+package com.github.lotsabackscatter.blueimp.gallery;
 
 import com.google.gson.Gson;
 import com.vaadin.annotations.JavaScript;
