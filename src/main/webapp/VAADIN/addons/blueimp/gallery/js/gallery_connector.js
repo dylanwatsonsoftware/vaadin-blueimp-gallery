@@ -1,7 +1,7 @@
-window.com_immersion_blueimp_gallery_Gallery = function() {
+window.com_github_lotsabackscatter_blueimp_gallery_Gallery = function() {
     var that = this;
 
-    var galleryElem = $('<div id="blueimp-gallery" class="blueimp-gallery">' +
+    var galleryElem = $('<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">' +
                           '<div class="slides"></div>' +
                           '<h3 class="title"></h3>' +
                           '<a class="prev">‹</a>' +
