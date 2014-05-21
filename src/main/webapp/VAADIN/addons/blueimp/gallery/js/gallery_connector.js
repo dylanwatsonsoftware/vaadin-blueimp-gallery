@@ -16,11 +16,6 @@ window.com_github_lotsabackscatter_blueimp_gallery_Gallery = function() {
     this.showGallery = function() {
         var images = that.getState().images;
         var options = that.getState().options;
-        console.log(options);
-        console.log(options);
-        console.log(images);
-        console.log(images[0]);
-        console.log(images[0]["title"]);
         options.container = galleryElem;
         blueimp.Gallery(images, options);
     };
