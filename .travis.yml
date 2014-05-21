@@ -1,7 +1,7 @@
 language: java
-script: mvn clean deploy -DskipTests=true --settings etc/settings.xml
-script: "[ ${TRAVIS_PULL_REQUEST} = 'false' ] && mvn clean deploy -DskipTests=true --settings etc/settings.xml || mvn clean verify -DskipTests=true --settings etc/settings.xml"
+script: '[ ${TRAVIS_PULL_REQUEST} = ''false'' ] && mvn clean deploy -DskipTests=true
+  --settings etc/settings.xml || mvn clean verify -DskipTests=true --settings etc/settings.xml'
 env:
   global:
-  - secure: KksW1poACWekL4kpygLu2e1A/x+kshC2G8eFeVyCQ1dUWBR0FqTGPLEHppW+DgHyLk4RlPtoudiEQnOu/KLJ9yxEI0cDj9N3wXp853JnK+MHyy5kdtEErURjEsldDdAjgLk8BUzsC6vpceY9G3USBOmR8RfBRjoLt0WngrAP018=
-  - secure: f6rYXf0CZDEnNMbyrYNa5CeHAosK7AdeoaujSIBg6hCK9Wm3sHe/eOI7aT5fayvAdVC3ds9NyMTdAAtBfp2wNC1m2pc8Q/6OfplLCyn8chCJ7ZiBJ1ospJDW7LRxaiQlqrJ69CU29M5Bb2CPHc3WDSvU02T2YxAvbU6KK6bnPsY=
+  - secure: KyyJIWSec2cLvZnl+ftdMrygv/RSPbOqDEQM9KQ8+ekHuJdH3FE5ZK1KAVflaLDe2BpyxsxQ4DC7nDMkZtUynAXdglZtV1Ayk4I/bzbAF0axNoCRfxbTfRKpCBNz1jEGnM2qb09gOaRanoHnsXezkn8RbRzOQiKQu9A+3nDXMKY=
+  - secure: FVVh/JkeLYN8Bo17EIuPXNtUu1YsWG8u0qr6my/PcsfGtXv8VZdPbY5h68Dc2nQOI7UW7CO3o8AakfocWpZafhWwhTJbI/FN7Dl1JByZ/3ltRNUB22ImgTbE0uRGKUSBrrhaFZLqWKnCTJjJALuNlhR+FI4XYXfViZmUfLq/FX8=
