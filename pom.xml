@@ -22,7 +22,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <vaadin.version>7.1.15</vaadin.version>
-        <gpg.passphrase></gpg.passphrase>
+        <gpg.passphrase>${SONATYPE_PASSWORD}</gpg.passphrase>
     </properties>
 
     <licenses>
@@ -96,6 +96,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+				<version>2.5.1</version>
                 <configuration>
                     <source>1.6</source>
                     <target>1.6</target>
@@ -106,7 +107,9 @@
                 <artifactId>maven-release-plugin</artifactId>
                 <version>2.5</version>
                 <configuration>
-                    <arguments>-Dgpg.passphrase=${gpg.passphrase}</arguments>
+	                <mavenExecutorId>forked-path</mavenExecutorId>
+	                <useReleaseProfile>false</useReleaseProfile>
+	                <arguments>-Dgpg.passphrase=${SONATYPE_PASSWORD} -Psonatype-oss-release</arguments>
                 </configuration>
             </plugin>
             <plugin>
