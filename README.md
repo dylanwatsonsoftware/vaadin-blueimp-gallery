@@ -12,7 +12,7 @@ Download the latest release via Maven Central:
 ```xml
 <dependency>
     <groupId>com.github.lotsabackscatter</groupId>
-    <artifactId>vaadin-masonry-cards</artifactId>
+    <artifactId>vaadin-blueimp-gallery</artifactId>
     <version>1.0</version>
 </dependency>
 ```
