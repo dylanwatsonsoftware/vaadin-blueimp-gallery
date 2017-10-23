@@ -13,7 +13,7 @@ public class GalleryState extends JavaScriptComponentState {
     /**
      * The images to be shown in the gallery.
      */
-    public List<Image> images = new ArrayList<Image>();
+    public List<Image> images = new ArrayList<>();
     /**
      * The options used to display the gallery.
      */

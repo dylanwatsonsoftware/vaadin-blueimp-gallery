@@ -1,6 +1,5 @@
 package com.github.lotsabackscatter.blueimp.gallery;
 
-import com.google.gson.Gson;
 import com.vaadin.annotations.JavaScript;
 import com.vaadin.annotations.StyleSheet;
 import com.vaadin.ui.AbstractJavaScriptComponent;
@@ -25,16 +24,20 @@ import static java.util.Arrays.asList;
 })
 public class Gallery extends AbstractJavaScriptComponent {
 
-    private static final long serialVersionUID = 1L;
-    private static final Gson gson = new Gson();
-
     /**
      * @param shownImage    the image to open the gallery to
      * @param galleryImages the images in the gallery (may contain the shownImage)
      */
     public void showGallery(Image shownImage, Image... galleryImages) {
-        Options options = new Options();
-        showGallery(shownImage, asList(galleryImages), options);
+        showGallery(shownImage, asList(galleryImages), new Options());
+    }
+
+    /**
+     * @param shownImage    the image to open the gallery to
+     * @param galleryImages the images to show in the gallery (may contain the shownImage)
+     */
+    public void showGallery(Image shownImage, List<Image> galleryImages) {
+        showGallery(shownImage, galleryImages, new Options());
     }
 
     /**
@@ -43,7 +46,7 @@ public class Gallery extends AbstractJavaScriptComponent {
      * @param options       the gallery options (index will be overridden)
      */
     public void showGallery(Image shownImage, List<Image> galleryImages, Options options) {
-        List<Image> images = new ArrayList<Image>();
+        List<Image> images = new ArrayList<>();
         images.addAll(galleryImages);
 
         if (!images.contains(shownImage)) {
