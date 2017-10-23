@@ -15,8 +15,14 @@ import static java.util.Arrays.asList;
  *
  * @author watsond
  */
-@JavaScript({"vaadin://addons/blueimp/gallery/js/jquery.min.js", "vaadin://addons/blueimp/gallery/js/blueimp-gallery.min.js", "vaadin://addons/blueimp/gallery/js/gallery_connector.js"})
-@StyleSheet({"vaadin://addons/blueimp/gallery/css/blueimp-gallery.min.css"})
+@JavaScript({
+        "vaadin://addons/blueimp/gallery/js/jquery.min.js",
+        "vaadin://addons/blueimp/gallery/js/blueimp-gallery.min.js",
+        "vaadin://addons/blueimp/gallery/js/gallery_connector.js"
+})
+@StyleSheet({
+        "vaadin://addons/blueimp/gallery/css/blueimp-gallery.min.css"
+})
 public class Gallery extends AbstractJavaScriptComponent {
 
     private static final long serialVersionUID = 1L;
