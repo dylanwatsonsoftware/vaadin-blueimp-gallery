@@ -25,57 +25,57 @@ import static java.util.Arrays.asList;
 public class Gallery extends AbstractJavaScriptComponent {
 
     /**
-     * @param shownImage    the image to open the gallery to
-     * @param galleryImages the images in the gallery (may contain the shownImage)
+     * @param shownPicture    the picture to open the gallery to
+     * @param galleryPictures the pictures in the gallery (may contain the shownPicture)
      */
-    public void showGallery(Image shownImage, Image... galleryImages) {
-        showGallery(shownImage, asList(galleryImages), new Options());
+    public void showGallery(Picture shownPicture, Picture... galleryPictures) {
+        showGallery(shownPicture, asList(galleryPictures), new Options());
     }
 
     /**
-     * @param shownImage    the image to open the gallery to
-     * @param galleryImages the images to show in the gallery (may contain the shownImage)
+     * @param shownPicture    the picture to open the gallery to
+     * @param galleryPictures the pictures to show in the gallery (may contain the shownPicture)
      */
-    public void showGallery(Image shownImage, List<Image> galleryImages) {
-        showGallery(shownImage, galleryImages, new Options());
+    public void showGallery(Picture shownPicture, List<Picture> galleryPictures) {
+        showGallery(shownPicture, galleryPictures, new Options());
     }
 
     /**
-     * @param shownImage    the image to open the gallery to
-     * @param galleryImages the images to show in the gallery (may contain the shownImage)
+     * @param shownPicture    the picture to open the gallery to
+     * @param galleryPictures the pictures to show in the gallery (may contain the shownPicture)
      * @param options       the gallery options (index will be overridden)
      */
-    public void showGallery(Image shownImage, List<Image> galleryImages, Options options) {
-        List<Image> images = new ArrayList<>();
-        images.addAll(galleryImages);
+    public void showGallery(Picture shownPicture, List<Picture> galleryPictures, Options options) {
+        List<Picture> pictures = new ArrayList<>();
+        pictures.addAll(galleryPictures);
 
-        if (!images.contains(shownImage)) {
+        if (!pictures.contains(shownPicture)) {
             // Add image as the first in the list
-            images.add(0, shownImage);
+            pictures.add(0, shownPicture);
         }
 
-        int index = images.indexOf(shownImage);
+        int index = pictures.indexOf(shownPicture);
 
         options.index = index < 0 ? 0 : index;
 
-        showGallery(images, options);
+        showGallery(pictures, options);
     }
 
     /**
-     * Shows the gallery. The gallery will be opened to the first image in the list.
+     * Shows the gallery. The gallery will be opened to the first picture in the list.
      *
-     * @param images the images to show in the gallery
+     * @param pictures the pictures to show in the gallery
      */
-    public void showGallery(List<Image> images) {
-        showGallery(images, new Options());
+    public void showGallery(List<Picture> pictures) {
+        showGallery(pictures, new Options());
     }
 
     /**
-     * @param images  the images to show in the gallery
+     * @param pictures  the pictures to show in the gallery
      * @param options the gallery options
      */
-    public void showGallery(List<Image> images, Options options) {
-        getState().images = images;
+    public void showGallery(List<Picture> pictures, Options options) {
+        getState().pictures = pictures;
         getState().options = options;
         callFunction("showGallery");
     }
@@ -84,7 +84,7 @@ public class Gallery extends AbstractJavaScriptComponent {
      * {@inheritDoc}
      */
     @Override
-    protected GalleryState getState() {
-        return (GalleryState) super.getState();
+    protected State getState() {
+        return (State) super.getState();
     }
 }

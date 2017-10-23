@@ -13,13 +13,13 @@ window.com_github_lotsabackscatter_blueimp_gallery_Gallery = function() {
         ).appendTo(that.getElement());
 
     this.showGallery = function() {
-        var images  = that.getState().images,
-            options = that.getState().options;
+        var pictures = that.getState().pictures,
+            options  = that.getState().options;
 
         options = (options) ? options : {};
 
         options.container = galleryElem;
 
-        blueimp.Gallery(images, options);
+        blueimp.Gallery(pictures, options);
     };
 };

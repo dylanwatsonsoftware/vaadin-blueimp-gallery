@@ -7,7 +7,7 @@ import javax.annotation.Nonnull;
 /**
  * An image that is to be displayed in the Gallery
  */
-public class Image {
+public class Picture {
 
     private static final Gson gson = new Gson();
     public final String title;
@@ -15,7 +15,7 @@ public class Image {
     public final String href;
     public final String thumbnail;
 
-    private Image(String title, String type, String href, String thumbnail) {
+    private Picture(String title, String type, String href, String thumbnail) {
         this.title = title;
         this.type = type;
         this.href = href;
@@ -60,8 +60,8 @@ public class Image {
             return this;
         }
 
-        public Image build() {
-            return new Image(title, type, href, thumbnail);
+        public Picture build() {
+            return new Picture(title, type, href, thumbnail);
         }
     }
 }
