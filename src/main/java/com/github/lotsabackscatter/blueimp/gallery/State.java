@@ -8,12 +8,13 @@ import java.util.List;
 /**
  * The current state of the gallery.
  */
-public class GalleryState extends JavaScriptComponentState {
+public class State extends JavaScriptComponentState {
 
     /**
-     * The images to be shown in the gallery.
+     * The pictures to be shown in the gallery.
      */
-    public List<Image> images = new ArrayList<Image>();
+
+    public List<Picture> pictures = new ArrayList<>();
     /**
      * The options used to display the gallery.
      */
